@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 
 void main() {
   runApp(const TahminOyunu());
-  //fdklfjkldsşjf
 }
 
 class TahminOyunu extends StatelessWidget {
@@ -118,17 +117,25 @@ class _AnaEkranState extends State<AnaEkran> {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20.0),
-            TextField(
-              controller: _controller,
-              keyboardType: TextInputType.number, // Sadece sayı girişi
-              inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))], // Yalnızca sayı girişine izin verir
-              textAlign: TextAlign.center,
-              decoration: const InputDecoration(
-                hintText: 'Sayıyı girin',
-                border: OutlineInputBorder(), // Kenarlık ekler
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white, // Container'ın arka plan rengi
+                borderRadius: BorderRadius.circular(10.0), // Container'ın köşe yarıçapı
               ),
-              onSubmitted: _handleSubmitted,
+              child: TextField(
+                controller: _controller,
+                keyboardType: TextInputType.number, // Sadece sayı girişi
+                inputFormatters: [FilteringTextInputFormatter.allow(RegExp(r'[0-9]'))], // Yalnızca sayı girişine izin verir
+                textAlign: TextAlign.center,
+                decoration: const InputDecoration(
+                  hintText: 'Sayıyı girin',
+                  border: InputBorder.none, // Kenarlık yok
+                ),
+                onSubmitted: _handleSubmitted,
+              ),
             ),
+
+
             const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
@@ -145,7 +152,7 @@ class _AnaEkranState extends State<AnaEkran> {
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               style: ElevatedButton.styleFrom(
-                primary: Colors.black,
+                backgroundColor: Colors.black,
                 textStyle: const TextStyle(fontSize: 18.0),
                 padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 shape: RoundedRectangleBorder(
