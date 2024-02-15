@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 void main() {
   runApp(const TahminOyunu());
+  //fdklfjkldsşjf
 }
 
 class TahminOyunu extends StatelessWidget {
